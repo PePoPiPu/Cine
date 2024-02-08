@@ -45,7 +45,7 @@ public class Sala {
     public static void elegirHueco() {
         Scanner entrada = new Scanner(System.in);
         String email = "";
-        int opcionButacas[] = {0, 0};
+        int fila = 0, columna =0;
         int opcionSala;
         // Elegimos una sala
         System.out.print("Introduce el número de la sala a la que quieres ir >> ");
@@ -58,25 +58,20 @@ public class Sala {
             System.out.println();
         }
         // Elegimos una butaca de la sala
-        System.out.println("Elige entre una de las butacas >> ");
-        for (int i = 0; i < opcionButacas.length; i++) {
-            opcionButacas[i] = entrada.nextInt();
-        }
+        System.out.print("Elige una fila >> ");
+        fila = entrada.nextInt();
+        System.out.print("Elige una columna");
+        columna = entrada.nextInt();
         // Le pedimos el e-mail al usuario
         System.out.println("Por favor, introduce tu email >> ");
         email = entrada.next();
         // Actualizamos el array con la nueva información
-        for (int i = 0; i < salas[opcionSala].butacas.length; i++) {
-            for (int j = 0; j < salas[opcionSala].butacas.length; j++) {
-                if(i == opcionButacas[0] && j == opcionButacas[1]){
-                    salas[opcionSala].butacas[i][j] = email;
-                }
-            }
-        }
+        salas[opcionSala].butacas[fila - 1][columna - 1] = email;
+
         // Imprimimos el array
         for (int i = 0; i < salas[opcionSala].butacas.length; i++) {
             for (int j = 0; j < salas[opcionSala].butacas.length; j++) {
-                System.out.print((salas[opcionSala].butacas[i][j] = "vacio") + " ");
+                System.out.print((salas[opcionSala].butacas[i][j]) + " ");
             }
             System.out.println();
         }
