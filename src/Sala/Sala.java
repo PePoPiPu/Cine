@@ -2,23 +2,44 @@ package Sala;
 import Cine.Cine;
 import Peliculas.Peliculas;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Sala {
     public int numSala;
     public String pelicula;
-    public static String[][] butacas = new String[10][12];
+    private static String[][] butacas = {
+            {"------1--", "---2--", "---3--", "---4--", "---5--", "---6--", "---7--", "---8--", "---9--", ""},
+            {"|1| ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+            {"|2| ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+            {"|3| ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+            {"|4| ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+            {"|5| ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+            {"|6| ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+            {"|7| ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+            {"|8| ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+            {"|9| ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+            {"|10| ","vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío ", "vacío "},
+    };
+
 
     public Sala(int numSala, String pelicula, String[][] butacas) {
         this.numSala = numSala;
         this.pelicula = pelicula;
         this.butacas = butacas;
     }
+
     public static Sala[] crearSalas() {
         Sala[] salas = new Sala[Cine.numSalas];
         for (int i = 0; i < salas.length; i++) {
-            String[][] butacas = new String[10][12];
             salas[i] = new Sala(i + 1, "", butacas);
+        }
+        // Crea un array de películas
+        Peliculas[] peliculas = Peliculas.crearPeliculas();
+        // Crea un array de salas
+        for (int i = 0; i < salas.length; i++) {
+            // Asigna una película a cada sala
+            salas[i].asignarPelicula(peliculas);
         }
         return salas;
     }
@@ -29,15 +50,6 @@ public class Sala {
         this.pelicula = peliculas[indicePelicula].titulo;
     }
     public static void mostrarSalas() {
-        // Crea un array de películas
-        Peliculas[] peliculas = Peliculas.crearPeliculas();
-        // Crea un array de salas
-        for (int i = 0; i < Sala.salas.length; i++) {
-            String[][] butacas = new String[10][12];
-            salas[i] = new Sala(i + 1, "", butacas);
-            // Asigna una película a cada sala
-            salas[i].asignarPelicula(peliculas);
-        }
         for (Sala sala : salas) {
             System.out.println("Sala " + sala.numSala + ": " + sala.pelicula);
         }
@@ -51,9 +63,12 @@ public class Sala {
         System.out.print("Introduce el número de la sala a la que quieres ir >> ");
         opcionSala = entrada.nextInt();
         // Mostramos las butacas de esa sala, tanto las vacías como las llenas
-        for (int i = 0; i < salas[opcionSala].butacas.length; i++) {
-            for (int j = 0; j < salas[opcionSala].butacas.length; j++) {
-                System.out.print((salas[opcionSala].butacas[i][j] = "vacio") + " ");
+        for (int i = 0; i < salas[opcionSala].butacas[i].length; i++) {
+            for (int j = 0; j < salas[opcionSala].butacas[i].length; j++) {
+//                if (i == 0) {
+//                    salas[opcionSala].butacas[i][j] = "--" + String.valueOf(j) + "--";
+//                }
+                System.out.print((salas[opcionSala].butacas[i][j]));
             }
             System.out.println();
         }
@@ -66,24 +81,24 @@ public class Sala {
         System.out.println("Por favor, introduce tu email >> ");
         email = entrada.next();
         // Actualizamos el array con la nueva información
-        salas[opcionSala].butacas[fila - 1][columna - 1] = email;
+        salas[opcionSala].butacas[fila][columna] = email;
 
         // Imprimimos el array
-        for (int i = 0; i < salas[opcionSala].butacas.length; i++) {
-            for (int j = 0; j < salas[opcionSala].butacas.length; j++) {
+        for (int i = 0; i < salas[opcionSala].butacas[i].length; i++) {
+            for (int j = 0; j < salas[opcionSala].butacas[i].length; j++) {
                 System.out.print((salas[opcionSala].butacas[i][j]) + " ");
             }
             System.out.println();
         }
     }
     // Se declara el método como static porque si no da un error diciendo que no se puede llamar a un método no static desde un contexto static?????
-    public static void mostrarButacas() {
-        for (int i = 0; i < butacas.length; i++) {
-            for (int j = 0; j < butacas.length; j++) {
-                System.out.print((butacas[i][j] = "vacio") + " ");
-            }
-            System.out.println();
-        }
-    }
+//    public static void mostrarButacas() {
+//        for (int i = 0; i < butacas.length; i++) {
+//            for (int j = 0; j < butacas.length; j++) {
+//                System.out.print((butacas[i][j] = "vacio") + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 }
 

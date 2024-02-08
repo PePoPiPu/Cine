@@ -27,7 +27,7 @@ public class Main {
                     Sala.elegirHueco();
                     break;
                 case 3:
-                    Sala.mostrarButacas();
+//                    Sala.mostrarButacas();
                     break;
                 case 4:
                     System.out.println("Hasta luego!");
