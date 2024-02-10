@@ -65,9 +65,6 @@ public class Sala {
         // Mostramos las butacas de esa sala, tanto las vacías como las llenas
         for (int i = 0; i < salas[opcionSala].butacas[i].length; i++) {
             for (int j = 0; j < salas[opcionSala].butacas[i].length; j++) {
-//                if (i == 0) {
-//                    salas[opcionSala].butacas[i][j] = "--" + String.valueOf(j) + "--";
-//                }
                 System.out.print((salas[opcionSala].butacas[i][j]));
             }
             System.out.println();
@@ -79,7 +76,7 @@ public class Sala {
         columna = entrada.nextInt();
         // Le pedimos el e-mail al usuario
         System.out.println("Por favor, introduce tu email >> ");
-        email = entrada.next();
+        email = entrada.next() + " ";
         // Actualizamos el array con la nueva información
         salas[opcionSala].butacas[fila][columna] = email;
 
@@ -92,13 +89,19 @@ public class Sala {
         }
     }
     // Se declara el método como static porque si no da un error diciendo que no se puede llamar a un método no static desde un contexto static?????
-//    public static void mostrarButacas() {
-//        for (int i = 0; i < butacas.length; i++) {
-//            for (int j = 0; j < butacas.length; j++) {
-//                System.out.print((butacas[i][j] = "vacio") + " ");
-//            }
-//            System.out.println();
-//        }
-//    }
+    public static void mostrarButacas() {
+        Scanner entrada = new Scanner(System.in);
+        int opcionSala;
+        // Elegimos una sala
+        System.out.print("Introduce el número de la sala que quieres ver >> ");
+        opcionSala = entrada.nextInt();
+        // Mostramos las butacas de esa sala, tanto las vacías como las llenas
+        for (int i = 0; i < salas[opcionSala].butacas[i].length; i++) {
+            for (int j = 0; j < salas[opcionSala].butacas[i].length; j++) {
+                System.out.print((salas[opcionSala].butacas[i][j]));
+            }
+            System.out.println();
+        }
+    }
 }
 
