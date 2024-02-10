@@ -1,7 +1,7 @@
 package Peliculas;
 /**
- * Esta clase contiene 2 atributos: título y duración de la película.
- * Contiene el método crearPeliculas explicado más abajo. {@link }
+ * Esta clase contiene 2 atributos: título y duración de la película.<br>
+ * Contiene el método {@link #crearPeliculas() crearPeliculas}.
  * @author alexsugimoto
  */
 public class Peliculas {
@@ -14,10 +14,10 @@ public class Peliculas {
     }
 
     /**
-     * Este método hace lo siguiente:
-     *      1. Crear un array de 14 objetos 'Peliculas[]'.
-     *      2. Asigna a cada objeto un título de una película y una duración, ambos hardcodeados.
-     * @return el array de objetos.
+     * Este método hace lo siguiente:<br><br>
+     *      1. Crear un array de 14 objetos 'Peliculas[]'.<br><br>
+     *      2. Asigna a cada objeto un título de una película y una duración, ambos hardcodeados.<br>
+     * @return el array de objetos.<br><br>
      * @author alexsugimoto
      */
     public static Peliculas[] crearPeliculas() {
