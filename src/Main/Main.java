@@ -1,7 +1,6 @@
 package Main;
-import Cine.Cine;
-import Sala.Sala;
 
+import Sala.Sala;
 import java.util.Scanner;
 
 public class Main {

@@ -2,7 +2,6 @@ package Sala;
 import Cine.Cine;
 import Peliculas.Peliculas;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Sala {
@@ -26,7 +25,7 @@ public class Sala {
     public Sala(int numSala, String pelicula, String[][] butacas) {
         this.numSala = numSala;
         this.pelicula = pelicula;
-        this.butacas = butacas;
+        Sala.butacas = butacas;
     }
 
     public static Sala[] crearSalas() {
@@ -37,9 +36,9 @@ public class Sala {
         // Crea un array de películas
         Peliculas[] peliculas = Peliculas.crearPeliculas();
         // Crea un array de salas
-        for (int i = 0; i < salas.length; i++) {
+        for (Sala sala : salas) {
             // Asigna una película a cada sala
-            salas[i].asignarPelicula(peliculas);
+            sala.asignarPelicula(peliculas);
         }
         return salas;
     }
@@ -56,8 +55,8 @@ public class Sala {
     }
     public static void elegirHueco() {
         Scanner entrada = new Scanner(System.in);
-        String email = "";
-        int fila = 0, columna =0;
+        String email;
+        int fila, columna;
         int opcionSala;
         // Elegimos una sala
         System.out.print("Introduce el número de la sala a la que quieres ir >> ");
