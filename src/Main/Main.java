@@ -3,6 +3,12 @@ package Main;
 import Sala.Sala;
 import java.util.Scanner;
 
+/**
+ * La clase Main hace lo siguiente:
+ *      1. Imprime un menú simple en consola de donde el usuario puede elegir una opción.
+ *      2. Dependiendo de la opción que se escoja, se realizan llamadas a diferentes métodos.
+ * @author alexsugimoto
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);

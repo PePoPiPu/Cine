@@ -1,4 +1,9 @@
 package Peliculas;
+/**
+ * Esta clase contiene 2 atributos: título y duración de la película.
+ * Contiene el método crearPeliculas explicado más abajo. {@link }
+ * @author alexsugimoto
+ */
 public class Peliculas {
     public String titulo;
     public int duracion;
@@ -8,7 +13,13 @@ public class Peliculas {
         this.duracion = duracion;
     }
 
-    // Creamos un array de películas.
+    /**
+     * Este método hace lo siguiente:
+     *      1. Crear un array de 14 objetos 'Peliculas[]'.
+     *      2. Asigna a cada objeto un título de una película y una duración, ambos hardcodeados.
+     * @return el array de objetos.
+     * @author alexsugimoto
+     */
     public static Peliculas[] crearPeliculas() {
         Peliculas[] peliculas = new Peliculas[14];
         peliculas[0] = new Peliculas("Pobres Criaturas", 142);
