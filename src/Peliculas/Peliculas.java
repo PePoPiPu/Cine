@@ -19,10 +19,14 @@ public class Peliculas {
 
     /**
      * Este método hace lo siguiente:<br><br>
-     * 1. Crear un array de 14 objetos 'Peliculas[]'.<br><br>
-     * 2. Asigna a cada objeto un título de una película y una duración, ambos hardcodeados.<br>
+     * 1. Se le pasa como parámetro un número entero.
+     * 2. Crear un array de 14 objetos 'Peliculas[]'.<br><br>
+     * 3. Asigna a cada objeto un título de una película y una duración, ambos hardcodeados.<br>
+     * 4. Crea un array de 2 Strings, en la posición 0 va el título de la película y en la posición 1 va la duración de la película, convirtiéndolo a un String.<br>
+     * 5. El título y la duración se eligen con el parámetro i.
      *
-     * @return el array de objetos.<br><br>
+     * @param i un número entero elegido de forma aleatoria.
+     * @return el array de Strings.<br><br>
      * @author alexsugimoto
      */
     Peliculas[] peliculas = new Peliculas[7];

@@ -7,6 +7,7 @@ public class Sala {
 
     /**
      * Se genera un constructor con todos los atributos de la clase.
+     * @author alexsugimoto
      */
     public Sala(int numSala, String pelicula, String duracion, String[][] butacas) {
         this.numSala = numSala;

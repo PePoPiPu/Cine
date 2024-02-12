@@ -6,6 +6,14 @@ import Sala.Sala;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Esta clase es la que tiene la mayoría del código de nuestro programa.<br><br>
+ * Se divide en 3 partes principales:<br>
+ * 1. Declaración de variables.<br>
+ * 2. Constructor vacío.<br>
+ * 3. Definición de los métodos.<br><br>
+ * @author alexsugimoto
+ */
 public class Cine {
     private int aforo = 320;
     public int numSalas = 14, numSala, fila, columna;
@@ -22,6 +30,16 @@ public class Cine {
     //      - El título de una película
     //      - La duración de una película
     //      - El array de butacas
+    /**
+     * Este método lo usamos para crear un cine después de instanciarlo en el main. Hace lo siguiente:<br><br>
+     * 1. Dentro de un bucle for:<br><br>
+     * 1.1 Crea un array de Strings con la información de una película. La película se elige pasando como parámetro un número del 0 al 6 al método de {@link Peliculas#crearPeliculas(int) crearPeliculas(i)}.<br>
+     * 1.2 Asigna a una variable 'titulo' la posición 0 del array infoPelicula, es decir, el String correspondiente al título de la película.<br>
+     * 1.3 Asigna a una variable 'duracion' la posición 1 del array infoPelicula, es decir, el String correspondiente a la duración de la película.<br>
+     * 1.4 Asigna a una variable 'butacas' una matriz bidimensional que representa las butacas de una sala de cine.<br>
+     * 1.5 A cada sala dentro del array de objetos les asigna el número de sala, el título y duración de la película y el array de butacas vacías.<br><br>
+     * @author alexsugimoto
+     */
     public void crearCine() {
         for (int i = 0; i < numSalas; i++) {
             String[] infoPelicula = pelicula.crearPeliculas(rand.nextInt(0, 7));
@@ -44,13 +62,25 @@ public class Cine {
         }
 
     }
-
+    /**
+     * Este método imprime en pantalla todas las salas con su información (número de sala y el título y la duración de la película emitida).<br><br>
+     * @author alexsugimoto
+     */
     public void mostrarSalas() {
         for (int i = 0; i < salas.length; i++) {
             System.out.println("Sala: " + salas[i].numSala + " - " + salas[i].pelicula + " - " + salas[i].duracion + " minutos.");
         }
     }
-
+    /**
+     * Este método hace lo siguiente:<br><br>
+     * 1. Pide al usuario el número de la sala a la que quiere ir.<br>
+     * 2. Con un bucle for se imprime el array de butacas correspondiente a la sala elegida.<br>
+     * 3. Pide al usuario una fila y una columna donde se quiera sentar.<br>
+     * 4. Pide al usuario su e-mail.<br>
+     * 5. Se actualiza el array en la posición correspondiente a las coordenadas fila, columna introducida por el usuario.<br>
+     * 6. Con un bucle for se imprime el array actualizado.<br><br>
+     * @author alexsugimoto
+     */
     public void elegirHueco() {
         // Pedir al usuario a qué sala quiere ir
         System.out.print("Introduce la sala a la que quieres ir >> ");
@@ -80,7 +110,12 @@ public class Cine {
             System.out.println();
         }
     }
-
+    /**
+     * Este método hace lo siguiente:<br><br>
+     * 1. Pide al usuario la sala que se quiere examinar.<br>
+     * 2. Con un bucle for se imprime el array de butacas correspondiente a la sala elegida.<br><br>
+     * @author alexsugimoto
+     */
     public void mostrarButacas() {
         System.out.print("Introduce la sala que quieres ver >> ");
         numSala = entrada.nextInt();
