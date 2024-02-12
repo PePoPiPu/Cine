@@ -35,7 +35,7 @@ public class Main {
                     System.out.println();
                     break;
                 case 2:
-
+                    cine.elegirHueco();
                     break;
                 case 3:
                     cine.mostrarButacas();
