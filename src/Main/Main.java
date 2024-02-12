@@ -38,7 +38,7 @@ public class Main {
 
                     break;
                 case 3:
-
+                    cine.mostrarButacas();
                     break;
                 case 4:
                     System.out.println("Hasta luego!");
