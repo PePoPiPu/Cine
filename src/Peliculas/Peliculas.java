@@ -13,29 +13,33 @@ public class Peliculas {
         this.duracion = duracion;
     }
 
+    public Peliculas(){
+
+    }
+
     /**
      * Este método hace lo siguiente:<br><br>
-     *      1. Crear un array de 14 objetos 'Peliculas[]'.<br><br>
-     *      2. Asigna a cada objeto un título de una película y una duración, ambos hardcodeados.<br>
+     * 1. Crear un array de 14 objetos 'Peliculas[]'.<br><br>
+     * 2. Asigna a cada objeto un título de una película y una duración, ambos hardcodeados.<br>
+     *
      * @return el array de objetos.<br><br>
      * @author alexsugimoto
      */
-    public static Peliculas[] crearPeliculas() {
-        Peliculas[] peliculas = new Peliculas[14];
-        peliculas[0] = new Peliculas("Pobres Criaturas", 142);
-        peliculas[1] = new Peliculas("Argylle", 139);
-        peliculas[2] = new Peliculas("El bastardo", 127);
-        peliculas[3] = new Peliculas("Anyone but you", 93);
-        peliculas[4] = new Peliculas("Ocho apellidos marroquís", 87);
-        peliculas[5] = new Peliculas("Wonka", 116);
-        peliculas[6] = new Peliculas("Patrick", 88);
-        peliculas[7] = new Peliculas("Aquaman y el Reino Perdido", 124);
-        peliculas[8] = new Peliculas("La sociedad de la nieve", 144);
-        peliculas[9] = new Peliculas("The zone of interest", 166);
-        peliculas[10] = new Peliculas("Misántropo", 179);
-        peliculas[11] = new Peliculas("Perfect Days", 125);
-        peliculas[12] = new Peliculas("Concrete Utopia", 130);
-        peliculas[13] = new Peliculas("Miller's Girl", 94);
-        return peliculas;
+    Peliculas[] peliculas = new Peliculas[7];
+    public String[] crearPeliculas(int i) {
+        peliculas[0] = new Peliculas("El Joker", 127);
+        peliculas[1] = new Peliculas("Interstellar", 240);
+        peliculas[2] = new Peliculas("Los intocables", 134);
+        peliculas[3] = new Peliculas("Salvando al soldado Ryan", 150);
+        peliculas[4] = new Peliculas("Idi i Smotri", 160);
+        peliculas[5] = new Peliculas("Mulan", 134);
+        peliculas[6] = new Peliculas("Sin novedad en el frente", 120);
+
+        String[] peliculaInfo = new String[2];
+        peliculaInfo[0] = peliculas[i].titulo;
+        peliculaInfo[1] = Integer.toString(peliculas[i].duracion);
+
+        return peliculaInfo;
     }
+
 }

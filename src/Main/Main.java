@@ -1,6 +1,9 @@
 package Main;
 
+import Cine.Cine;
+import Peliculas.Peliculas;
 import Sala.Sala;
+
 import java.util.Scanner;
 
 /**
@@ -11,6 +14,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
+        Cine cine = new Cine();
+        cine.crearCine();
         Scanner entrada = new Scanner(System.in);
         int opcion;
         do{
@@ -26,13 +31,14 @@ public class Main {
             switch (opcion) {
                 case 1:
                     System.out.println();
-                    Sala.mostrarSalas();
+                    cine.mostrarSalas();
+                    System.out.println();
                     break;
                 case 2:
-                    Sala.elegirHueco();
+
                     break;
                 case 3:
-                    Sala.mostrarButacas();
+
                     break;
                 case 4:
                     System.out.println("Hasta luego!");
